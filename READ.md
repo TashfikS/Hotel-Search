@@ -12,6 +12,7 @@ This project is a web application that allows users to search for hotels, view h
 
 ## Technologies Used
 
+
 - Python
 - Flask
 - SQLAlchemy
