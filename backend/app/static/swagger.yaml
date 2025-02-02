@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Hotel Booking API
+  version: 1.0.0
+paths:
+  /register/:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+      responses:
+        '200':
+          description: User created successfully
+        '400':
+          description: Username already registered
+  /users/me:
+    get:
+      summary: Get current user
+      responses:
+        '200':
+          description: Current user details
+  /hotels/:
+    post:
+      summary: Search hotels
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HotelSearch'
+      responses:
+        '200':
+          description: List of hotels
+  /bookmarks/:
+    post:
+      summary: Create a bookmark
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookmarkCreate'
+      responses:
+        '200':
+          description: Bookmark created successfully
+    get:
+      summary: Get bookmarks
+      responses:
+        '200':
+          description: List of bookmarks
+components:
+  schemas:
+    UserCreate:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    HotelSearch:
+      type: object
+      properties:
+        city:
+          type: string
+        min_price:
+          type: number
+        max_price:
+          type: number
+        star_rating:
+          type: integer
+    BookmarkCreate:
+      type: object
+      properties:
+        hotel_id:
+          type: integer

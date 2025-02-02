@@ -1,0 +1,14 @@
+Flask
+Flask-SQLAlchemy
+Flask-Swagger-UI
+SQLAlchemy
+psycopg2-binary
+python-dotenv
+pydantic
+requests
+scrapy
+passlib
+alembic
+selenium
+scrapy-selenium
+scrapy_playwright
